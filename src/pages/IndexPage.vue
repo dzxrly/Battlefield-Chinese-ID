@@ -40,7 +40,7 @@
       </div>
 
       <q-select
-        class="game-selector q-mb-md"
+        class="q-mb-md"
         :class="{ 'col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3': true }"
         outlined
         v-model="selectedGame"
@@ -215,7 +215,6 @@
           map-options
           color="primary"
           bg-color="white"
-          dense
         >
           <template v-slot:prepend>
             <q-icon name="layers" color="primary" />
@@ -223,13 +222,14 @@
         </q-select>
         <div :class="isLtMd ? 'col-12 q-mt-md' : 'col-6 q-pl-md'">
           <q-btn
-            class="full-width full-height"
+            class="full-width"
             color="primary"
             label="计算"
             :disable="!selectedRow"
             :loading="calculating"
             unelevated
             @click="handleCalculate"
+            size="lg"
           >
             <template v-slot:loading>
               <q-spinner-gears scolor="primary" class="q-mr-sm" />
@@ -689,15 +689,6 @@ $primary-light: rgba(25, 118, 210, 0.05);
     display: flex;
     align-items: center;
     color: #424242;
-  }
-
-  .game-selector,
-  .search-input {
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-1px);
-    }
   }
 
   .search-result-chip {
